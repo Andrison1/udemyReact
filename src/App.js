@@ -1,4 +1,6 @@
-import MasterExpenses from "./components/MasterExpenses";
+import MasterExpenses from "./components/Expenses/MasterExpenses";
+
+import NewExpense from "./components/NewExpenses/NewExpense";
 
 const expenses = [
   {
@@ -22,10 +24,15 @@ const expenses = [
   },
 ];
 
+function addExpenseHandler(data) {
+  console.log("in app.js");
+  console.log(data);
+}
+
 function App() {
   return (
     <div>
-      <h2>Let's get started!</h2>
+      <NewExpense onFetchingData={addExpenseHandler} />
       <MasterExpenses expenses={expenses}></MasterExpenses>
     </div>
   );
